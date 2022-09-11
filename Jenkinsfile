@@ -14,13 +14,13 @@ pipeline {
                 sh 'mvn package'
             }
         }
-          stage('test') {
+          stage('qatest') {
             steps {
                 sh 'mvn test'
               
             }
         }
-          stage('test') {
+          stage('uattest') {
             steps {
                 echo 'test'
                
