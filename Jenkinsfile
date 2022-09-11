@@ -18,7 +18,7 @@ pipeline {
                 sh 'mvn package'
             }
         }
-          stage('devqatest') {
+          stage('devqatest1') {
             steps {
                 sh 'mvn test'
               
