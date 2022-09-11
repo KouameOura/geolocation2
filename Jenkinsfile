@@ -1,6 +1,6 @@
 pipeline {
     agent any
-    
+
     triggers {
   pollSCM('* * * * *')
     }
@@ -16,7 +16,7 @@ pipeline {
                 sh 'mvn package'
             }
         }
-          stage('qatest') {
+          stage('devqatest') {
             steps {
                 sh 'mvn test'
               
