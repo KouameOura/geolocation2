@@ -12,19 +12,20 @@ pipeline{
         }
         stage('upload artifact') {
             steps{
-                sh
-                'nexusArtifactUploader artifacts: 
-                [[artifactId: '${POM_ARTIFACTID}', 
+                script{
+                nexusArtifactUploader artifacts: 
+                [[artifactId: "${POM_ARTIFACTID}", 
                 classifier: '',
-                 file: 'target/${POM_ARTIFACTID}-${POM_VERSION}.${POM_PACKAGING}',
-                  type: '${POM_PACKAGING}']],
+                 file: "target/${POM_ARTIFACTID}-${POM_VERSION}.${POM_PACKAGING}",
+                  type: "${POM_PACKAGING}"]],
                    credentialsId: 'nexusID',
-                    groupId: '${POM_GROUPID}',
+                    groupId: "${POM_GROUPID}",
                      nexusUrl: '66.228.58.33:8081',
                       nexusVersion: 'nexus2',
                        protocol: 'http',
                         repository: 'biom',
-                         version: '${POM_VERSION}''
+                         version: "${POM_VERSION}"
+            }
                 
             }
 
