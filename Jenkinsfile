@@ -22,7 +22,7 @@ pipeline{
                    credentialsId: 'nexusID',
                     groupId: "${mavenPom.groupId}",
                      nexusUrl: '66.228.58.33:8081',
-                      nexusVersion: 'nexus2',
+                      nexusVersion: 'nexus3',
                        protocol: 'http',
                         repository: 'biom',
                          version: "${mavenPom.version}"
