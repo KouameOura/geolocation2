@@ -14,7 +14,7 @@ pipeline {
             agent any
             steps {
               withSonarQubeEnv('SonarServer') {
-                  sh 'mvn sonar:sonar'
+                  sh 'mvn sonar:sonar -Dsonar.projectKey=KouameOura_geolocation -Dsonar.java.binaries=.'
               }
             }
           }
